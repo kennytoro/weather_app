@@ -8,15 +8,15 @@ pipeline {
         pollSCM '* * * * *'
     }
 
-    stages {
-        stage('Checkout') {
-            steps {
-                // Clone of the repos
-                git 'https://github.com/kennytoro/health_check.git'
-            }
-        }
+    // stages {
+    //     stage('Checkout') {
+    //         steps {
+    //             // Clone of the repos
+    //             git 'https://github.com/kennytoro/health_check.git'
+    //         }
+    //     }
 
-        stage('Build') {
+        stage('Build docker images') {
             steps {
                 // Building stage
                 echo "Welcome to ${NAME} Jenkins World"
