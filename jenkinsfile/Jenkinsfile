@@ -36,6 +36,12 @@ pipeline {
                 sh " kubectl apply -f ./deployment/"
             }
         }
+        stage('Confirm Deployment is running') {
+            steps {
+                sh " kubectl get po -w"
+                sh " kubectl get deployment"
+            }
+        }
     }
 
     post {
