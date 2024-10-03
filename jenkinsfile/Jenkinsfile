@@ -38,8 +38,9 @@ pipeline {
         }
         stage('Confirm Deployment is running') {
             steps {
-                sh " kubectl get po -w"
-                sh " kubectl get deployment"
+                sh '''
+                kubectl get po,svc,deployment
+                '''
             }
         }
     }
