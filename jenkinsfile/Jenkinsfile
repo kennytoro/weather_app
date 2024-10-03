@@ -47,7 +47,7 @@ pipeline {
     post {
         success {
             // Actions to be perform when the pipeline is successful
-            echo " T for Thanks... Man go job on ${BUILD_ID} build"
+            echo " T for Thanks... Man good job on ${BUILD_ID} build"
         }
         failure {
             echo "Pipeline failed... Ooops man down"
