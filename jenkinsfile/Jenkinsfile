@@ -8,7 +8,7 @@ pipeline {
         pollSCM '* * * * *'
     }
 
-    // stages {
+    stages {
     //     stage('Checkout') {
     //         steps {
     //             // Clone of the repos
