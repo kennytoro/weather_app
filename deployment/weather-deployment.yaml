@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: weather-deployment
+  name: weather-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: weather-deployment
+  template:
+    metadata:
+      labels:
+        app: weather-deployment
+    spec:
+      containers:
+      - image: kennytoro/weatherapp
+        name: weatherapp
+        ports:
+          - containerPort: 3000
+

@@ -4,6 +4,9 @@ pipeline {
         //define your vars
         NAME = 'Toro'
     }
+    triggers {
+        pollSCM '* * * * *'
+    }
 
     stages {
 
