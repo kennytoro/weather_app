@@ -10,6 +10,13 @@ pipeline {
 
     stages {
 
+        stage('Login to docker hub') {
+            steps {
+                sh "cat passwd | docker login -u kennytoro --password-stdin"
+                echo 'Login successfully'
+            }
+        }
+
         stage('Build docker images') {
             steps {
                 // Building stage
