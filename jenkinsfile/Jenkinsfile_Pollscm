@@ -3,6 +3,8 @@ pipeline {
     environment {
         //define your vars
         NAME = 'Toro'
+        IMAGE_TAG = "${IMAGE_NAME}:${BUILD_NUMBER}"
+        IMAGE_NAME = 'kennytoro/weatherapp' 
     }
     triggers {
         pollSCM '* * * * *'
@@ -21,10 +23,9 @@ pipeline {
             steps {
                 // Building stage
                 echo "Welcome to ${NAME} Jenkins World"
-                sh '''
-                docker build . -t kennytoro/weatherapp
-                '''
-                echo " The Build Url is ${BUILD_URL}"
+                sh "docker build . -t ${IMAGE_TAG}"
+                sh "docker build . -t ${IMAGE_NAME}"
+                echo "Docker image build successfully"
             }
         }
 
