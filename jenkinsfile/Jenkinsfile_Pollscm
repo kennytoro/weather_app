@@ -55,7 +55,7 @@ pipeline {
             echo " T for Thanks... Man go job on ${BUILD_ID} build"
         }
         failure {
-            echo "Pipeline failed... Ooops man down"
+            echo "Pipeline failed... Ooops man down!!"
         }
     }
 }
